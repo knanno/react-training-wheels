@@ -36,6 +36,9 @@
         // The curly braces allow us to dynamically reference and produce variables; essentially use JS:
         const name = "Corbin"
         const word = "simple"
+
+        const company = "https://xoi.io"
+
         const Express = () => {
             return (
                 <div>
@@ -43,7 +46,9 @@
                     <p>{Math.random() * 100}</p>
                     <h3>Today's Date Is: {new Date().toDateString()}</h3>
                     <footer>{word}</footer>
+                    <a href={company}>X0i</a>
                 </div>
+                //Notice how the H2 tag above uses braces instead of quotes.
             )
         }
         ReactDOM.render(<Express />,document.getElementById('funWithVariables'))    
