@@ -12,11 +12,41 @@
 </head>
 <body>
     <h1>Playground</h1>
-    <footer>A footer :-)</footer>
     <div id="anID"></div>
-    <div class="aClass"></div>
-    <!--setting type will tell babel which script to compile-->
-    <script type="text/babel"></script>
+    <div id="funWithVariables"></div>
+    <footer>A footer :-)</footer>
     
+    <!--setting type will tell babel which script to compile-->
+    <script type="text/babel">
+        const Banner = () => {
+            return ( // This Reach component is a template which returns JSX (XML). The template is injected using ReactDOM below but
+                     // something must combile the JSX into HTML. This is where Babel helps out.
+                     // JSX Caveats: Class is reserved in JS, so JSX uses className. When compiled, classNames are translated to JS classes.
+                     // JSX expressions can only have one parent, or root, element. 
+                <div>
+                    <p>banner</p>
+                </div>
+            )
+        }
+        //Make sure you call the correct method here. ReactDOM, note the capitalization.
+        ReactDOM.render(<Banner />,document.getElementById('anID'))
+    </script>
+    <script type="text/babel">
+        //This script shows how we can produce dynamic values and expressions using React and JSX.
+        // The curly braces allow us to dynamically reference and produce variables; essentially use JS:
+        const name = "Corbin"
+        const word = "simple"
+        const Express = () => {
+            return (
+                <div>
+                    <h1>{name.toUpperCase()}</h1>
+                    <p>{Math.random() * 100}</p>
+                    <h3>Today's Date Is: {new Date().toDateString()}</h3>
+                    <footer>{word}</footer>
+                </div>
+            )
+        }
+        ReactDOM.render(<Express />,document.getElementById('funWithVariables'))    
+    </script>
 </body>
 </html>
