@@ -14,6 +14,8 @@
     <h1>Playground</h1>
     <div id="anID"></div>
     <div id="funWithVariables"></div>
+    <div id="funWithButtons"></div>
+    <div id="oneLineButton"></div>
     <footer>A footer :-)</footer>
     
     <!--setting type will tell babel which script to compile-->
@@ -22,13 +24,15 @@
             return ( // This Reach component is a template which returns JSX (XML). The template is injected using ReactDOM below but
                      // something must combile the JSX into HTML. This is where Babel helps out.
                      // JSX Caveats: Class is reserved in JS, so JSX uses className. When compiled, classNames are translated to JS classes.
-                     // JSX expressions can only have one parent, or root, element. 
+                     // JSX expressions can only have one parent, or root, element.
+                     // React Components must start with a CAPITAL Letter!
                 <div>
                     <p>banner</p>
                 </div>
             )
         }
         //Make sure you call the correct method here. ReactDOM, note the capitalization.
+        //This is loading or rendering the constant Banner (our component) into the HTML element, in the case a div with the id of "anID"
         ReactDOM.render(<Banner />,document.getElementById('anID'))
     </script>
     <script type="text/babel">
@@ -53,24 +57,42 @@
         }
         ReactDOM.render(<Express />,document.getElementById('funWithVariables'))    
     </script>
-        <script type="text/babel">
-            //This script is a simple example click event.
-            const name = "click"
-            //all event handlers, like onClick, are camelcase.
-            
-            //A common naming convention in react apps, "handle{NameOfEvent}"
-            const handleClick = () => {
-
-            }
-
-            const clicky = () => {
-                return (
-                    <div>
-                        <button></button>
-                    </div>
-                )
-            }
-            ReactDOM.render(<Express />,document.getElementById('funWithVariables'))    
-        </script>
+    <script type="text/babel">
+        //This script is a simple example click event.
+        const name = "click"
+        //all event handlers, like onClick, are camelcase.
+        
+        //A common naming convention in react apps, "handle{NameOfEvent}"
+        //When initializing an event, we get access to an event object inside the handler function. This is available for any handler function for any event.
+        //The event object (e) contains information about the event occuring, in this case when the button is clicked.
+        const handleClick = (e) => {
+            console.log('you click the button! :-O')
+            console.log(e)
+        }
+        //The above function is defined outside of the template below. See the next script for in-line functions.
+        const Clicky = () => {
+            return (
+                <div>
+                    <button onClick={handleClick}>Click me!</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<Clicky />,document.getElementById('funWithButtons'))    
+    </script>
+    <script type="text/babel">
+        //This script is an example of in-line event handlers:
+        // It also has access to the event function, like above.
+        // Because we used one line of code, we can remove the curly braces.
+        // However, multiline needs these additional braces, like this:
+        // <button onClick={(e) => {console.log('Hello! You clicked an inline function!'); console.log(e)}}>Click me!</button>
+        const OneLine = () => {
+            return (
+                <div>
+                    <button onClick={() => console.log('Hello! You clicked an inline function!')}>Click me!</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<OneLine />,document.getElementById('oneLineButton'))    
+    </script>
 </body>
 </html>
