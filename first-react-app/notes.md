@@ -33,3 +33,8 @@ src:
  - React.StrictMode, a react component built-in. Wrapping our component in this preforms additional error checks for us and highlight these in runtime.
 package-lock and package track dependencies, which we have installed into our project and stored in node_modules. Keeps track of the versions we are using. Version numbers are listed here and some scripts which are used to run and build our app.
  
+ npm run start
+
+React Component (just a JS function) -> Template, which is returned.
+export default App; (at the bottom of App.js) - We always export our components so they can be imported in other files.
+The App.js component is exported and then imported in the index.js file which is used to render
