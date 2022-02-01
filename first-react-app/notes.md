@@ -38,3 +38,7 @@ package-lock and package track dependencies, which we have installed into our pr
 React Component (just a JS function) -> Template, which is returned.
 export default App; (at the bottom of App.js) - We always export our components so they can be imported in other files.
 The App.js component is exported and then imported in the index.js file which is used to render
+
+### Style Sheet Intro:
+Typically in React apps, we have to options for stylesheets: index.css which is imported in index.js and stylesheets for
+the specific component. For example, the App component has a style sheet App.css imported in App.js. Keeping our styles seperate from index and per component helps keep everything organized as the app gets more complex.
