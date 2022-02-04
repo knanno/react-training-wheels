@@ -42,3 +42,21 @@ The App.js component is exported and then imported in the index.js file which is
 ### Style Sheet Intro:
 Typically in React apps, we have to options for stylesheets: index.css which is imported in index.js and stylesheets for
 the specific component. For example, the App component has a style sheet App.css imported in App.js. Keeping our styles seperate from index and per component helps keep everything organized as the app gets more complex.
+
+
+### Intro to State
+
+- Component data which may change over time.
+ - For example, a to-do list which items are added and removed
+ - React would have to change the data in the component, this is state
+
+- State can be even something like a toggle, true or false boolean. Toggling the state back and forth.
+- Changing the value of a varible is not enough to display changes in state. The variable might change, but there is no reaction to it.
+- When our code is being mounted in the DOM, we say the he component is being evaluated; gathering what functions and components are related.
+- Yet, because it has already been evaluated making a change to a variable is not enough. React must re-evaluate in order to notice changes. Variable changes do not trigger React to re-evaluate; this is where useState hook comes in.
+
+### Using the useState Hook
+
+- This is a special function, useState, which is known as a React hook. There are other react hooks.
+- They are just functions that do something special, and start with the word use.
+- useState hook lets you create state. Whenever that state value changes, 
