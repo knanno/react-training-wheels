@@ -9,7 +9,7 @@ npx also runs the package with any arguments.
 For example: npx create-react-app name-of-project
 create-react-app is a package which installs all dependencies for a React  SAP (single page application).
 
-Using './something' is telling the program to look in the same directory as the current file. 
+Using './something' is telling the program to look in the same directory as the current file.
 
 # Directory/structure of React App:
 node_modules: stores all project dependencies and packages
@@ -33,7 +33,7 @@ src:
  - React.StrictMode, a react component built-in. Wrapping our component in this preforms additional error checks for us and highlight these in runtime.
 package-lock and package track dependencies, which we have installed into our project and stored in node_modules. Keeps track of the versions we are using. Version numbers are listed here and some scripts which are used to run and build our app.
  
- npm run start
+Start local react: npm run start
 
 React Component (just a JS function) -> Template, which is returned.
 export default App; (at the bottom of App.js) - We always export our components so they can be imported in other files.
@@ -59,4 +59,4 @@ the specific component. For example, the App component has a style sheet App.css
 
 - This is a special function, useState, which is known as a React hook. There are other react hooks.
 - They are just functions that do something special, and start with the word use.
-- useState hook lets you create state. Whenever that state value changes, 
+- useState hook lets you create state. Whenever that state value changes, it triggers the component to be reevaluated.
