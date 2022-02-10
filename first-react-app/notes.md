@@ -60,3 +60,14 @@ the specific component. For example, the App component has a style sheet App.css
 - This is a special function, useState, which is known as a React hook. There are other react hooks.
 - They are just functions that do something special, and start with the word use.
 - useState hook lets you create state. Whenever that state value changes, it triggers the component to be reevaluated.
+
+### Under the hood
+What happens when our react app first spins up?
+- index.js runs first; it takes our component `(<App>)` and renders it to the DOM.
+ - Yet, the App comonent has to be evaluated and the following JSX template has to be compiled.
+ - React evaluates our app component and runs component functions, injects dynamic values into the JSX template, and connects any event handlers.
+ - Now our JSX can be compiled.
+ - Because browsers do not understand JSX, they must be compiled into JS.
+ - The resulting JS is in a tree-like structure which is loaded into, what is known as, the Virtual DOM which uses JS DOM manupilation methods.
+- So what happens to this process when we introduce state? Our App has already been evaluated and rendered in VDOM.
+ - When state changes, React actually compares the new Virtual DOM with the Current VDOM for any changes and only updates those changes in the VDOM.

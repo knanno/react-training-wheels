@@ -13,6 +13,13 @@ function App() {
   //const [the value set in the useState function, a new function to use to change the value]
   //which grabs the two variables available in the useState function.
 
+  const [events, setEevents] = useState([
+    {title: "42 is the best number", id:1},
+    {title: "AA changed my flight times", id:2},
+    {title: "Octopuses are the best.", id:3}
+  ])
+
+
     const handleClick = () => {
       //the setName function is called above on our useState const array.
       //This will handle our changed state.
@@ -25,6 +32,11 @@ function App() {
     <div className="App">
       <h1>My name is {name}</h1>
       <button onClick={handleClick}>Change name</button>
+      {events.map((event)=> (
+        <div key={event.id}>
+            <h2>{event.title}</h2>
+        </div>
+      ))}
     </div>
   );
 }
